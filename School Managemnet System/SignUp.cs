@@ -36,7 +36,7 @@ namespace School_Managemnet_System
 // Button click ke andar:
 
             // 1. Connection String (Apne SSMS se copy karein)
-            string connString = @"Data Source=YOUR_SERVER_NAME;Initial Catalog=SchoolDB;Integrated Security=True;";
+            string connString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
 
             // 2. Validation
             if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text))
