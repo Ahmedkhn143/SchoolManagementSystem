@@ -53,6 +53,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudentRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentRegistration.Designer.cs">
+      <DependentUpon>frmStudentRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmStudentRegistration.resx">
+      <DependentUpon>frmStudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
