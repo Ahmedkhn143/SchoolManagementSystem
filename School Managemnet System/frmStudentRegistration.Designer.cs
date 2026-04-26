@@ -39,7 +39,55 @@
             this.lblFatherName = new System.Windows.Forms.Label();
             this.lblClassName = new System.Windows.Forms.Label();
             this.lblContactNo = new System.Windows.Forms.Label();
+            this.dgvStudents = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(319, 253);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(221, 51);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Register Student";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtRegNo
+            // 
+            this.txtRegNo.Location = new System.Drawing.Point(267, 77);
+            this.txtRegNo.Name = "txtRegNo";
+            this.txtRegNo.Size = new System.Drawing.Size(140, 26);
+            this.txtRegNo.TabIndex = 1;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(621, 75);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(156, 26);
+            this.txtFullName.TabIndex = 3;
+            // 
+            // txtFatherName
+            // 
+            this.txtFatherName.Location = new System.Drawing.Point(254, 145);
+            this.txtFatherName.Name = "txtFatherName";
+            this.txtFatherName.Size = new System.Drawing.Size(153, 26);
+            this.txtFatherName.TabIndex = 5;
+            // 
+            // txtClassName
+            // 
+            this.txtClassName.Location = new System.Drawing.Point(621, 144);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(156, 26);
+            this.txtClassName.TabIndex = 7;
+            // 
+            // txtContactNo
+            // 
+            this.txtContactNo.Location = new System.Drawing.Point(236, 201);
+            this.txtContactNo.Name = "txtContactNo";
+            this.txtContactNo.Size = new System.Drawing.Size(157, 26);
+            this.txtContactNo.TabIndex = 9;
             // 
             // lblRegNo
             // 
@@ -51,97 +99,62 @@
             this.lblRegNo.TabIndex = 0;
             this.lblRegNo.Text = "Registration No:";
             // 
-            // txtRegNo
-            // 
-            this.txtRegNo.Location = new System.Drawing.Point(163, 74);
-            this.txtRegNo.Name = "txtRegNo";
-            this.txtRegNo.Size = new System.Drawing.Size(187, 26);
-            this.txtRegNo.TabIndex = 1;
-            // 
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(371, 73);
+            this.lblFullName.Location = new System.Drawing.Point(494, 75);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(121, 27);
             this.lblFullName.TabIndex = 2;
             this.lblFullName.Text = "Full Name:";
             // 
-            // txtFullName
-            // 
-            this.txtFullName.Location = new System.Drawing.Point(503, 75);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(238, 26);
-            this.txtFullName.TabIndex = 3;
-            // 
             // lblFatherName
             // 
             this.lblFatherName.AutoSize = true;
             this.lblFatherName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFatherName.Location = new System.Drawing.Point(84, 144);
+            this.lblFatherName.Location = new System.Drawing.Point(99, 142);
             this.lblFatherName.Name = "lblFatherName";
             this.lblFatherName.Size = new System.Drawing.Size(149, 27);
             this.lblFatherName.TabIndex = 4;
             this.lblFatherName.Text = "Father Name:";
             // 
-            // txtFatherName
-            // 
-            this.txtFatherName.Location = new System.Drawing.Point(163, 146);
-            this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.Size = new System.Drawing.Size(187, 26);
-            this.txtFatherName.TabIndex = 5;
-            // 
             // lblClassName
             // 
             this.lblClassName.AutoSize = true;
             this.lblClassName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClassName.Location = new System.Drawing.Point(371, 144);
+            this.lblClassName.Location = new System.Drawing.Point(479, 144);
             this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(126, 27);
+            this.lblClassName.Size = new System.Drawing.Size(136, 27);
             this.lblClassName.TabIndex = 6;
             this.lblClassName.Text = "Class Name:";
-            // 
-            // txtClassName
-            // 
-            this.txtClassName.Location = new System.Drawing.Point(503, 146);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(238, 26);
-            this.txtClassName.TabIndex = 7;
             // 
             // lblContactNo
             // 
             this.lblContactNo.AutoSize = true;
             this.lblContactNo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.Location = new System.Drawing.Point(84, 215);
+            this.lblContactNo.Location = new System.Drawing.Point(99, 199);
             this.lblContactNo.Name = "lblContactNo";
-            this.lblContactNo.Size = new System.Drawing.Size(149, 27);
+            this.lblContactNo.Size = new System.Drawing.Size(131, 27);
             this.lblContactNo.TabIndex = 8;
             this.lblContactNo.Text = "Contact No:";
             // 
-            // txtContactNo
+            // dgvStudents
             // 
-            this.txtContactNo.Location = new System.Drawing.Point(163, 217);
-            this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(187, 26);
-            this.txtContactNo.TabIndex = 9;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(281, 290);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(221, 51);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Register Student";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Location = new System.Drawing.Point(104, 322);
+            this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.RowHeadersWidth = 62;
+            this.dgvStudents.RowTemplate.Height = 28;
+            this.dgvStudents.Size = new System.Drawing.Size(681, 272);
+            this.dgvStudents.TabIndex = 11;
             // 
             // frmStudentRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1076, 706);
+            this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtContactNo);
             this.Controls.Add(this.lblContactNo);
@@ -155,6 +168,8 @@
             this.Controls.Add(this.lblRegNo);
             this.Name = "frmStudentRegistration";
             this.Text = "Student Registration";
+            this.Load += new System.EventHandler(this.frmStudentRegistration_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +187,6 @@
         private System.Windows.Forms.Label lblFatherName;
         private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.Label lblContactNo;
+        private System.Windows.Forms.DataGridView dgvStudents;
     }
 }

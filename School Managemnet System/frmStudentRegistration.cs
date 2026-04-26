@@ -30,7 +30,7 @@ namespace School_Managemnet_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+            string connectionString = @"Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
 
             // 1. Basic Validation (Check karna ke zaroori boxes khali na hon)
             if (string.IsNullOrWhiteSpace(txtRegNo.Text) || string.IsNullOrWhiteSpace(txtFullName.Text))
@@ -64,12 +64,15 @@ namespace School_Managemnet_System
 
                         MessageBox.Show("Student Registered Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // 6. Save hone ke baad form ko saaf (clear) kar dena
-                        txtRegNo.Text = string.Empty;
-                        txtFullName.Text = string.Empty;
-                        txtFatherName.Text = string.Empty;
-                        txtClassName.Text = string.Empty;
-                        txtContactNo.Text = string.Empty;
+                        LoadLiveStudentData(); // Data save hone ke fauran baad grid ko refresh kar
+
+                        // Fields ko clear karna
+                        txtRegNo.Clear();
+                        txtFullName.Clear();
+                        txtFatherName.Clear();
+                        txtClassName.Clear();
+                        txtContactNo.Clear();
+                        txtRegNo.Focus();
                     }
                 }
             }
@@ -89,6 +92,37 @@ namespace School_Managemnet_System
             {
                 MessageBox.Show("System Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void LoadLiveStudentData()
+        {
+            string connectionString = @"Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    // Database se bachon ka data laane ki query
+                    string query = "SELECT RegistrationNo, FullName, FatherName, ClassName, ContactNo FROM Students ORDER BY StudentID DESC";
+
+                    // SqlDataAdapter data ko table ki shakal mein uthaata hai
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // GridView ko data de dena
+                    dgvStudents.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
+        }
+
+        private void frmStudentRegistration_Load(object sender, EventArgs e)
+        {
+            LoadLiveStudentData(); // Form khulte hi data load hoga
         }
     }
 }

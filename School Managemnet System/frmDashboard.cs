@@ -25,7 +25,7 @@ namespace School_Managemnet_System
        
             private void BtnStudent_Click(object sender, EventArgs e)
         {
-            frmStudentRegistration studentForm = new frmStudentRegistration();
+            LoadFormInPanel(new frmStudentRegistration());
             studentForm.Show();
             // Yahan hum this.Hide() nahi likh rahe taake Dashboard peeche open rahe
         }
@@ -45,8 +45,31 @@ namespace School_Managemnet_System
 
         private void btnAttendance_Click(object sender, EventArgs e)
         {
-            frmAttendance attendanceForm = new frmAttendance();
+            LoadFormInPanel(new frmAttendance());
             attendanceForm.Show();
+        }
+
+        private void btnFee_Click(object sender, EventArgs e)
+        {
+            LoadFormInPanel(new frmFeeManagement());
+        }
+        private void LoadFormInPanel(Form childForm)
+        {
+            // Agar panel mein pehle se koi form khula hai, toh usko hata do
+            if (this.mainPanel.Controls.Count > 0)
+            {
+                this.mainPanel.Controls.RemoveAt(0);
+            }
+
+            // Naye form ko panel ke hisaab se set karna
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None; // Form ka apna border khatam kar dega
+            childForm.Dock = DockStyle.Fill; // Panel ki puri jagah le lega
+
+            // Form ko panel mein add karna aur show karna
+            this.mainPanel.Controls.Add(childForm);
+            this.mainPanel.Tag = childForm;
+            childForm.Show();
         }
     }
     
