@@ -70,6 +70,7 @@
             this.btnAttendance.TabIndex = 2;
             this.btnAttendance.Text = "Attendance";
             this.btnAttendance.UseVisualStyleBackColor = true;
+            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
             // btnFee
             // 

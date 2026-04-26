@@ -42,6 +42,12 @@ namespace School_Managemnet_System
             loginForm.Show();
             this.Hide();
         }
+
+        private void btnAttendance_Click(object sender, EventArgs e)
+        {
+            frmAttendance attendanceForm = new frmAttendance();
+            attendanceForm.Show();
+        }
     }
     
 }

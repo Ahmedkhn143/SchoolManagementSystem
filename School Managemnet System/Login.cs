@@ -14,7 +14,7 @@ namespace School_Managemnet_System
     public partial class Login : Form
     {
         // Yahan apna SSMS ka Server Name daalein
-        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+        string connectionString = @"Data Source=Ahmad-Khan\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
 
         public Login()
         {
