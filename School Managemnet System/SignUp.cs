@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Windows.Forms;
 
 namespace School_Managemnet_System
@@ -19,80 +11,56 @@ namespace School_Managemnet_System
             InitializeComponent();
         }
 
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLoginPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
-           
+            MessageBox.Show("Register button clicked"); // Debug message
 
-// Button click ke andar:
-
-            // 1. Connection String (Apne SSMS se copy karein)
-            string connString = @"Data Source=Ahmad-Khan\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
-
-            // 2. Validation
+            string connString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
             if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Please fill all fields!");
                 return;
             }
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     conn.Open();
-                    // 3. SQL Query
-                    string query = "INSERT INTO AdminUsers (Email, Password) VALUES (@email, @pass)";
-
+                    string query = "INSERT INTO AdminUsers (Email, Password) VALUES (@Email, @Password)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                        cmd.Parameters.AddWithValue("@pass", txtPassword.Text); // Advance mein isey hash karna chahiye
-
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Account Created! Now please Login.");
 
-                        // Login form par wapis bhejna
+                        this.Hide();
                         Login login = new Login();
                         login.Show();
-                        this.Hide();
                     }
                 }
             }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("Database error: " + sqlEx.Message);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("An unexpected error occurred: " + ex.Message);
             }
         }
-        
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void btnLoginPage_Click(object sender, EventArgs e)
         {
-
+            Login loginForm = new Login();
+            loginForm.Show();
+            this.Hide();
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label2_Click(object sender, EventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
+        private void txtEmail_TextChanged(object sender, EventArgs e) { }
+        private void txtPassword_TextChanged(object sender, EventArgs e) { }
+        private void SignUp_Load(object sender, EventArgs e) { }
     }
 }
