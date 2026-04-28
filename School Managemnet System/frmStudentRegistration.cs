@@ -13,6 +13,8 @@ namespace School_Managemnet_System
 {
     public partial class frmStudentRegistration : Form
     {
+        private readonly string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+
         public frmStudentRegistration()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace School_Managemnet_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+
 
             // 1. Basic Validation (Check karna ke zaroori boxes khali na hon)
             if (string.IsNullOrWhiteSpace(txtRegNo.Text) || string.IsNullOrWhiteSpace(txtFullName.Text))
@@ -96,7 +98,7 @@ namespace School_Managemnet_System
 
         private void LoadLiveStudentData()
         {
-            string connectionString = @"Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
