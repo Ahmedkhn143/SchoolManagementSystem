@@ -47,7 +47,7 @@
             this.btnPayFee.TabIndex = 14;
             this.btnPayFee.Text = "Pay Fee";
             this.btnPayFee.UseVisualStyleBackColor = true;
-            this.btnPayFee.Click += new System.EventHandler(this.btnMarkAttendance_Click);
+            this.btnPayFee.Click += new System.EventHandler(this.btnPayFee_Click);
             // 
             // cmbStatus
             // 

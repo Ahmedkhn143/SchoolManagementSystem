@@ -82,5 +82,65 @@ namespace School_Managemnet_System
                 MessageBox.Show("System Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnPayFee_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Basic Validation
+                if (string.IsNullOrWhiteSpace(txtRegNo.Text) || cmbStatus.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtAmount.Text))
+                {
+                    MessageBox.Show("Please fill all fields (Registration No, Month, and Amount).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 2. Amount Validation
+                if (!decimal.TryParse(txtAmount.Text, out decimal feeAmount))
+                {
+                    MessageBox.Show("Please enter a valid number for the Fee Amount.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // 3. Database Logic
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Ensure the query matches the table structure
+                    string query = "INSERT INTO Fees (RegistrationNo, FeeMonth, Amount) VALUES (@RegNo, @Month, @Amount)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@RegNo", txtRegNo.Text);
+                        command.Parameters.AddWithValue("@Month", cmbStatus.SelectedItem.ToString());
+                        command.Parameters.AddWithValue("@Amount", feeAmount);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Fee payment recorded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Clear fields after successful insertion
+                            txtRegNo.Clear();
+                            cmbStatus.SelectedIndex = -1;
+                            txtAmount.Clear();
+                            txtRegNo.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to record fee payment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"SQL Error: {sqlEx.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}\n{ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
