@@ -75,6 +75,7 @@
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(143, 26);
             this.txtRegNo.TabIndex = 4;
+            this.txtRegNo.TextChanged += new System.EventHandler(this.txtRegNo_TextChanged);
             // 
             // dtpDate
             // 
@@ -131,7 +132,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "frmAttendance";
-            this.Text = "Form1";
+            this.Text = "Attendance Management";
+            this.Load += new System.EventHandler(this.frmAttendance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

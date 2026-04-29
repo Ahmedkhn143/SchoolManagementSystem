@@ -24,7 +24,7 @@ namespace School_Managemnet_System
         private void btnMarkAttendance_Click(object sender, EventArgs e)
         {
             // 1. Basic Validation: Check karein ke koi field khali na ho
-            if (string.IsNullOrWhiteSpace(txtRegNo.Text) || cmbStatus.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtAmount.Text))
+            if (string.IsNullOrWhiteSpace(txtRegNo.Text) || cmbStatus.SelectedIndex == -1 || string.IsNullOrWhiteSpace(amount.Text))
             {
                 MessageBox.Show("Please fill all fields (Registration No, Month, and Amount).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -32,7 +32,7 @@ namespace School_Managemnet_System
 
             // 2. Amount Validation: Check karein ke user ne Amount mein ABCD toh nahi likh diya
             // TryParse check karega ke value number hai ya nahi. Agar number hai toh 'feeAmount' mein save kar dega.
-            if (!decimal.TryParse(txtAmount.Text, out decimal feeAmount))
+            if (!decimal.TryParse(amount.Text, out decimal feeAmount))
             {
                 MessageBox.Show("Please enter a valid number for the Fee Amount.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -60,7 +60,7 @@ namespace School_Managemnet_System
                         // 4. Save hone ke baad agle bachay ke liye fields saaf kar dein
                         txtRegNo.Clear();
                         cmbStatus.SelectedIndex = -1;
-                        txtAmount.Text = string.Empty;
+                        amount.Text = string.Empty;
                         txtRegNo.Focus();
                     }
                 }

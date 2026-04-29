@@ -13,11 +13,44 @@ namespace School_Managemnet_System
 {
     public partial class frmAttendance : Form
     {
-        string connectionString = @"Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+        string connectionString = @"Data Source=AHMAD-KHAN\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;TrustServerCertificate=True;";
 
         public frmAttendance()
         {
             InitializeComponent();
+        }
+
+        private void frmAttendance_Load(object sender, EventArgs e)
+        {
+            LoadAttendanceData();
+        }
+
+        private void LoadAttendanceData()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT a.AttendanceID, a.RegistrationNo, s.FullName, a.AttendanceDate, a.Status " +
+                                   "FROM Attendance a " +
+                                   "JOIN Students s ON a.RegistrationNo = s.RegistrationNo " +
+                                   "ORDER BY a.AttendanceDate DESC";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvStudents.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading attendance: " + ex.Message);
+            }
+        }
+
+        private void txtRegNo_TextChanged(object sender, EventArgs e)
+        {
+            // Optional: Live search or validation could go here
         }
 
         private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,6 +92,7 @@ namespace School_Managemnet_System
                         // 3. Save hone ke baad agle bachay ke liye fields saaf kar dein
                         txtRegNo.Clear();
                         cmbStatus.SelectedIndex = -1; // ComboBox ko reset karna
+                        LoadAttendanceData(); // Refresh grid
                         txtRegNo.Focus(); // Cursor wapis pehlay box mein le aana
                     }
                 }
