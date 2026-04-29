@@ -96,6 +96,7 @@
             this.btnStaff.TabIndex = 4;
             this.btnStaff.Text = "Staff";
             this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnLogout
             // 

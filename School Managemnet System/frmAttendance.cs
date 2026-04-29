@@ -13,7 +13,7 @@ namespace School_Managemnet_System
 {
     public partial class frmAttendance : Form
     {
-        private readonly string ConnectionString = "your_connection_string_here";
+        string connectionString = @"Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
 
         public frmAttendance()
         {
@@ -36,7 +36,7 @@ namespace School_Managemnet_System
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
@@ -79,6 +79,11 @@ namespace School_Managemnet_System
             {
                 MessageBox.Show("System Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

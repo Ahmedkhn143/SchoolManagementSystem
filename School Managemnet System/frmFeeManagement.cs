@@ -14,7 +14,7 @@ namespace School_Managemnet_System
 {
     public partial class frmFeeManagement : Form
     {
-        private string connectionString = @"Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+        private readonly string connectionString = @"Data Source=AHMAD-KHAN\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;TrustServerCertificate=True;";
 
         public frmFeeManagement()
         {

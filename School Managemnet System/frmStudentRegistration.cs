@@ -13,7 +13,7 @@ namespace School_Managemnet_System
 {
     public partial class frmStudentRegistration : Form
     {
-        private readonly string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+        private readonly string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;TrustServerCertificate=True;";
 
         public frmStudentRegistration()
         {
@@ -54,7 +54,7 @@ namespace School_Managemnet_System
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // 4. Data ko parameters ke zariye bhejna (SQL Injection se bachne ke liye)
+                        //4.Data ko parameters ke zariye bhejna(SQL Injection se bachne ke liye)
                         cmd.Parameters.AddWithValue("@RegNo", txtRegNo.Text);
                         cmd.Parameters.AddWithValue("@FullName", txtFullName.Text);
                         cmd.Parameters.AddWithValue("@FatherName", txtFatherName.Text);
@@ -96,6 +96,9 @@ namespace School_Managemnet_System
             }
         }
 
+
+
+
         private void LoadLiveStudentData()
         {
 
@@ -125,6 +128,11 @@ namespace School_Managemnet_System
         private void frmStudentRegistration_Load(object sender, EventArgs e)
         {
             LoadLiveStudentData(); // Form khulte hi data load hoga
+        }
+
+        private void txtRegNo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

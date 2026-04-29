@@ -15,7 +15,7 @@ namespace School_Managemnet_System
         {
             MessageBox.Show("Register button clicked"); // Debug message
 
-            string connString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+            string connString = @"Data Source=AHMAD-KHAN\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;TrustServerCertificate=True;";
             if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Please fill all fields!");

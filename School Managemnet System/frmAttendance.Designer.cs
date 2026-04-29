@@ -35,6 +35,8 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.btnMarkAttendance = new System.Windows.Forms.Button();
+            this.dgvStudents = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +53,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(311, 251);
+            this.label3.Location = new System.Drawing.Point(311, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 2;
@@ -61,7 +63,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(311, 154);
+            this.label4.Location = new System.Drawing.Point(311, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 21);
             this.label4.TabIndex = 3;
@@ -69,17 +71,18 @@
             // 
             // txtRegNo
             // 
-            this.txtRegNo.Location = new System.Drawing.Point(315, 105);
+            this.txtRegNo.Location = new System.Drawing.Point(468, 66);
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(143, 26);
             this.txtRegNo.TabIndex = 4;
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(315, 201);
+            this.dtpDate.Location = new System.Drawing.Point(434, 134);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 26);
             this.dtpDate.TabIndex = 5;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // cmbStatus
             // 
@@ -88,7 +91,7 @@
             "Absent",
             "Present",
             "Leve"});
-            this.cmbStatus.Location = new System.Drawing.Point(315, 285);
+            this.cmbStatus.Location = new System.Drawing.Point(434, 199);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 28);
             this.cmbStatus.TabIndex = 6;
@@ -96,7 +99,7 @@
             // 
             // btnMarkAttendance
             // 
-            this.btnMarkAttendance.Location = new System.Drawing.Point(309, 330);
+            this.btnMarkAttendance.Location = new System.Drawing.Point(402, 262);
             this.btnMarkAttendance.Name = "btnMarkAttendance";
             this.btnMarkAttendance.Size = new System.Drawing.Size(131, 34);
             this.btnMarkAttendance.TabIndex = 7;
@@ -104,11 +107,22 @@
             this.btnMarkAttendance.UseVisualStyleBackColor = true;
             this.btnMarkAttendance.Click += new System.EventHandler(this.btnMarkAttendance_Click);
             // 
+            // dgvStudents
+            // 
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Location = new System.Drawing.Point(171, 302);
+            this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.RowHeadersWidth = 62;
+            this.dgvStudents.RowTemplate.Height = 28;
+            this.dgvStudents.Size = new System.Drawing.Size(617, 328);
+            this.dgvStudents.TabIndex = 16;
+            // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 687);
+            this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnMarkAttendance);
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.dtpDate);
@@ -118,6 +132,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAttendance";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +147,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Button btnMarkAttendance;
+        private System.Windows.Forms.DataGridView dgvStudents;
     }
 }

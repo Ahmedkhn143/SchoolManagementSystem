@@ -6,7 +6,7 @@ namespace School_Managemnet_System
 {
     public partial class Login : Form
     {
-        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;";
+        string connectionString = @"Data Source=AHMAD-KHAN\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;TrustServerCertificate=True;";
 
         public Login()
         {

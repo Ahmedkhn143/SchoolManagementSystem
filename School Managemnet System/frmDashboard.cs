@@ -26,8 +26,6 @@ namespace School_Managemnet_System
             private void BtnStudent_Click(object sender, EventArgs e)
         {
             LoadFormInPanel(new frmStudentRegistration());
-            studentForm.Show();
-            // Yahan hum this.Hide() nahi likh rahe taake Dashboard peeche open rahe
         }
 
         private void frmDashboard_Load(object sender, EventArgs e)
@@ -46,7 +44,6 @@ namespace School_Managemnet_System
         private void btnAttendance_Click(object sender, EventArgs e)
         {
             LoadFormInPanel(new frmAttendance());
-            attendanceForm.Show();
         }
 
         private void btnFee_Click(object sender, EventArgs e)
@@ -70,6 +67,11 @@ namespace School_Managemnet_System
             this.mainPanel.Controls.Add(childForm);
             this.mainPanel.Tag = childForm;
             childForm.Show();
+        }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            LoadFormInPanel(new frmStaffManagement());
         }
     }
     

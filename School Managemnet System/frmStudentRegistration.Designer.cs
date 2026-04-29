@@ -60,6 +60,7 @@
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(140, 26);
             this.txtRegNo.TabIndex = 1;
+            this.txtRegNo.TextChanged += new System.EventHandler(this.txtRegNo_TextChanged);
             // 
             // txtFullName
             // 
