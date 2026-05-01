@@ -102,5 +102,12 @@ namespace School_Managemnet_System
         {
 
         }
+
+        private void dgvStaff_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvStaff_CellContentClick(sender, e);
+        }
+
+       
     }
 }

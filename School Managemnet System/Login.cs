@@ -70,5 +70,10 @@ namespace School_Managemnet_System
         {
             // No initialization needed
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

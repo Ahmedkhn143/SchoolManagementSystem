@@ -38,23 +38,25 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.cmbDesignation = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvStaff
             // 
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(326, 284);
+            this.dgvStaff.Location = new System.Drawing.Point(326, 332);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.RowHeadersWidth = 62;
             this.dgvStaff.RowTemplate.Height = 28;
             this.dgvStaff.Size = new System.Drawing.Size(681, 245);
             this.dgvStaff.TabIndex = 23;
+            this.dgvStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellContentClick_1);
             // 
             // btnSaveStaff
             // 
             this.btnSaveStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveStaff.Location = new System.Drawing.Point(556, 224);
+            this.btnSaveStaff.Location = new System.Drawing.Point(556, 263);
             this.btnSaveStaff.Name = "btnSaveStaff";
             this.btnSaveStaff.Size = new System.Drawing.Size(221, 38);
             this.btnSaveStaff.TabIndex = 22;
@@ -64,7 +66,7 @@
             // 
             // txtContactNo
             // 
-            this.txtContactNo.Location = new System.Drawing.Point(819, 122);
+            this.txtContactNo.Location = new System.Drawing.Point(819, 190);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(157, 26);
             this.txtContactNo.TabIndex = 21;
@@ -73,7 +75,7 @@
             // 
             this.lblContactNo.AutoSize = true;
             this.lblContactNo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.Location = new System.Drawing.Point(673, 129);
+            this.lblContactNo.Location = new System.Drawing.Point(673, 191);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(131, 27);
             this.lblContactNo.TabIndex = 20;
@@ -83,7 +85,7 @@
             // 
             this.lblClassName.AutoSize = true;
             this.lblClassName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClassName.Location = new System.Drawing.Point(673, 64);
+            this.lblClassName.Location = new System.Drawing.Point(673, 119);
             this.lblClassName.Name = "lblClassName";
             this.lblClassName.Size = new System.Drawing.Size(140, 27);
             this.lblClassName.TabIndex = 18;
@@ -91,7 +93,7 @@
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(448, 122);
+            this.txtSalary.Location = new System.Drawing.Point(448, 191);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(153, 26);
             this.txtSalary.TabIndex = 17;
@@ -100,7 +102,7 @@
             // 
             this.lblFatherName.AutoSize = true;
             this.lblFatherName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFatherName.Location = new System.Drawing.Point(321, 120);
+            this.lblFatherName.Location = new System.Drawing.Point(332, 189);
             this.lblFatherName.Name = "lblFatherName";
             this.lblFatherName.Size = new System.Drawing.Size(79, 27);
             this.lblFatherName.TabIndex = 16;
@@ -110,7 +112,7 @@
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(321, 62);
+            this.lblFullName.Location = new System.Drawing.Point(332, 122);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(121, 27);
             this.lblFullName.TabIndex = 14;
@@ -118,7 +120,7 @@
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(461, 63);
+            this.txtFullName.Location = new System.Drawing.Point(461, 122);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(140, 26);
             this.txtFullName.TabIndex = 13;
@@ -131,16 +133,28 @@
             "Admin",
             "Accountant",
             "Guard"});
-            this.cmbDesignation.Location = new System.Drawing.Point(819, 61);
+            this.cmbDesignation.Location = new System.Drawing.Point(819, 121);
             this.cmbDesignation.Name = "cmbDesignation";
             this.cmbDesignation.Size = new System.Drawing.Size(121, 28);
             this.cmbDesignation.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("PMingLiU-ExtB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label3.Location = new System.Drawing.Point(509, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(281, 36);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Staff Management";
             // 
             // frmStaffManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 541);
+            this.ClientSize = new System.Drawing.Size(1153, 589);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbDesignation);
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.btnSaveStaff);
@@ -172,5 +186,6 @@
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.ComboBox cmbDesignation;
+        private System.Windows.Forms.Label label3;
     }
 }

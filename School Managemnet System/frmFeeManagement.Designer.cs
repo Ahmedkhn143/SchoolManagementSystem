@@ -36,14 +36,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.txtAmount = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPayFee
             // 
-            this.btnPayFee.Location = new System.Drawing.Point(519, 315);
+            this.btnPayFee.Location = new System.Drawing.Point(519, 290);
             this.btnPayFee.Name = "btnPayFee";
-            this.btnPayFee.Size = new System.Drawing.Size(131, 34);
+            this.btnPayFee.Size = new System.Drawing.Size(153, 34);
             this.btnPayFee.TabIndex = 14;
             this.btnPayFee.Text = "Pay Fee";
             this.btnPayFee.UseVisualStyleBackColor = true;
@@ -65,7 +66,7 @@
             "October",
             "November",
             "December"});
-            this.cmbStatus.Location = new System.Drawing.Point(529, 184);
+            this.cmbStatus.Location = new System.Drawing.Point(529, 189);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 28);
             this.cmbStatus.TabIndex = 13;
@@ -76,6 +77,7 @@
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(143, 26);
             this.txtRegNo.TabIndex = 11;
+            this.txtRegNo.TextChanged += new System.EventHandler(this.txtRegNo_TextChanged);
             // 
             // amount
             // 
@@ -110,12 +112,13 @@
             // dgvStudents
             // 
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(291, 370);
+            this.dgvStudents.Location = new System.Drawing.Point(205, 330);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 62;
             this.dgvStudents.RowTemplate.Height = 28;
-            this.dgvStudents.Size = new System.Drawing.Size(617, 328);
+            this.dgvStudents.Size = new System.Drawing.Size(729, 252);
             this.dgvStudents.TabIndex = 15;
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             // 
             // txtAmount
             // 
@@ -124,11 +127,22 @@
             this.txtAmount.Size = new System.Drawing.Size(143, 26);
             this.txtAmount.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("PMingLiU-ExtB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(434, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 36);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Fee Form";
+            // 
             // frmFeeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 710);
+            this.ClientSize = new System.Drawing.Size(1023, 623);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnPayFee);
@@ -139,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmFeeManagement";
             this.Text = "Pay Fee";
+            this.Load += new System.EventHandler(this.frmFeeManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,5 +170,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.Label label2;
     }
 }

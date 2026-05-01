@@ -36,6 +36,7 @@
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.btnMarkAttendance = new System.Windows.Forms.Button();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,17 +44,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(311, 71);
+            this.label1.Location = new System.Drawing.Point(311, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 21);
+            this.label1.Size = new System.Drawing.Size(161, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Registration:";
+            this.label1.Text = "Registration No:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(311, 199);
+            this.label3.Location = new System.Drawing.Point(311, 248);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 2;
@@ -63,7 +64,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(311, 134);
+            this.label4.Location = new System.Drawing.Point(311, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 21);
             this.label4.TabIndex = 3;
@@ -71,7 +72,7 @@
             // 
             // txtRegNo
             // 
-            this.txtRegNo.Location = new System.Drawing.Point(468, 66);
+            this.txtRegNo.Location = new System.Drawing.Point(502, 147);
             this.txtRegNo.Name = "txtRegNo";
             this.txtRegNo.Size = new System.Drawing.Size(143, 26);
             this.txtRegNo.TabIndex = 4;
@@ -79,7 +80,7 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(434, 134);
+            this.dtpDate.Location = new System.Drawing.Point(502, 194);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 26);
             this.dtpDate.TabIndex = 5;
@@ -92,7 +93,7 @@
             "Absent",
             "Present",
             "Leve"});
-            this.cmbStatus.Location = new System.Drawing.Point(434, 199);
+            this.cmbStatus.Location = new System.Drawing.Point(502, 241);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 28);
             this.cmbStatus.TabIndex = 6;
@@ -100,7 +101,7 @@
             // 
             // btnMarkAttendance
             // 
-            this.btnMarkAttendance.Location = new System.Drawing.Point(402, 262);
+            this.btnMarkAttendance.Location = new System.Drawing.Point(433, 280);
             this.btnMarkAttendance.Name = "btnMarkAttendance";
             this.btnMarkAttendance.Size = new System.Drawing.Size(131, 34);
             this.btnMarkAttendance.TabIndex = 7;
@@ -111,18 +112,29 @@
             // dgvStudents
             // 
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(171, 302);
+            this.dgvStudents.Location = new System.Drawing.Point(220, 320);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 62;
             this.dgvStudents.RowTemplate.Height = 28;
-            this.dgvStudents.Size = new System.Drawing.Size(617, 328);
+            this.dgvStudents.Size = new System.Drawing.Size(630, 283);
             this.dgvStudents.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("PMingLiU-ExtB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(374, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(356, 36);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Attendace Management";
             // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 687);
+            this.ClientSize = new System.Drawing.Size(1063, 655);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnMarkAttendance);
             this.Controls.Add(this.cmbStatus);
@@ -150,5 +162,6 @@
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Button btnMarkAttendance;
         private System.Windows.Forms.DataGridView dgvStudents;
+        private System.Windows.Forms.Label label2;
     }
 }

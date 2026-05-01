@@ -107,7 +107,7 @@ namespace School_Managemnet_System
                     connection.Open();
 
                     // Ensure the query matches the table structure
-                    string query = "INSERT INTO Fees (RegistrationNo, FeeMonth, Amount) VALUES (@RegNo, @Month, @Amount)";
+                    string query = "INSERT INTO Fees (RegistrationNo, FeeMonth, AmountPaid) VALUES (@RegNo, @Month, @Amount)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -125,6 +125,8 @@ namespace School_Managemnet_System
                             cmbStatus.SelectedIndex = -1;
                             txtAmount.Clear();
                             txtRegNo.Focus();
+
+                            LoadFeeData();
                         }
                         else
                         {
@@ -141,6 +143,54 @@ namespace School_Managemnet_System
             {
                 MessageBox.Show($"An unexpected error occurred: {ex.Message}\n{ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void LoadFeeData()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to fetch data from the Fees table
+                    string query = "SELECT * FROM Fees";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Bind the data to the DataGridView
+                        dgvStudents.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"SQL Error: {sqlEx.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}\n{ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void frmFeeManagement_Load(object sender, EventArgs e)
+        {
+            // Load data into the DataGridView when the form loads
+            LoadFeeData();
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtRegNo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

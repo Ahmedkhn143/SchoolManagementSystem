@@ -34,13 +34,14 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnLoginPage = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(272, 60);
+            this.label2.Location = new System.Drawing.Point(272, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 27);
             this.label2.TabIndex = 1;
@@ -51,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(272, 164);
+            this.label1.Location = new System.Drawing.Point(272, 230);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 27);
             this.label1.TabIndex = 2;
@@ -60,7 +61,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(277, 115);
+            this.txtEmail.Location = new System.Drawing.Point(268, 185);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(238, 26);
             this.txtEmail.TabIndex = 3;
@@ -68,7 +69,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(277, 212);
+            this.txtPassword.Location = new System.Drawing.Point(268, 279);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(238, 26);
             this.txtPassword.TabIndex = 4;
@@ -77,9 +78,9 @@
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(277, 278);
+            this.btnRegister.Location = new System.Drawing.Point(268, 336);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(109, 32);
+            this.btnRegister.Size = new System.Drawing.Size(109, 39);
             this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -88,19 +89,30 @@
             // btnLoginPage
             // 
             this.btnLoginPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoginPage.Location = new System.Drawing.Point(406, 278);
+            this.btnLoginPage.Location = new System.Drawing.Point(393, 336);
             this.btnLoginPage.Name = "btnLoginPage";
-            this.btnLoginPage.Size = new System.Drawing.Size(109, 32);
+            this.btnLoginPage.Size = new System.Drawing.Size(109, 39);
             this.btnLoginPage.TabIndex = 6;
             this.btnLoginPage.Text = "Login";
             this.btnLoginPage.UseVisualStyleBackColor = true;
             this.btnLoginPage.Click += new System.EventHandler(this.btnLoginPage_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("PMingLiU-ExtB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(309, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 36);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Register Page";
             // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 495);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLoginPage);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnLoginPage;
+        private System.Windows.Forms.Label label3;
     }
 }
