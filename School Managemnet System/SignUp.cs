@@ -13,7 +13,7 @@ namespace School_Managemnet_System
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Register button clicked"); // Debug message
+           
 
             string connString = @"Data Source=AHMAD-KHAN\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True;TrustServerCertificate=True;";
             if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text))

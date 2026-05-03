@@ -130,10 +130,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("PMingLiU-ExtB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(434, 56);
+            this.label2.Font = new System.Drawing.Font("PMingLiU-ExtB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(433, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 36);
+            this.label2.Size = new System.Drawing.Size(172, 40);
             this.label2.TabIndex = 17;
             this.label2.Text = "Fee Form";
             // 

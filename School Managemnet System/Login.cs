@@ -15,7 +15,7 @@ namespace School_Managemnet_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Login button clicked"); // Debug message
+           
 
             if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
