@@ -19,7 +19,7 @@ namespace School_Managemnet_System
         public frmFeeManagement()
         {
             InitializeComponent();
-        }
+        } 
 
         private void btnMarkAttendance_Click(object sender, EventArgs e)
         {

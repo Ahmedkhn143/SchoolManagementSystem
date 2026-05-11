@@ -34,7 +34,7 @@ namespace School_Managemnet_System
         {
 
 
-            // 1. Basic Validation (Check karna ke zaroori boxes khali na hon)
+            // 1. Basic Validation 
             if (string.IsNullOrWhiteSpace(txtRegNo.Text) || string.IsNullOrWhiteSpace(txtFullName.Text))
             {
                 MessageBox.Show("Registration Number and Full Name are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -43,7 +43,7 @@ namespace School_Managemnet_System
 
             try
             {
-                // 2. Database Connection Open Karna
+                // 2. Database Connection 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -54,7 +54,7 @@ namespace School_Managemnet_System
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        //4.Data ko parameters ke zariye bhejna(SQL Injection se bachne ke liye)
+                        //4.Data ko parameters
                         cmd.Parameters.AddWithValue("@RegNo", txtRegNo.Text);
                         cmd.Parameters.AddWithValue("@FullName", txtFullName.Text);
                         cmd.Parameters.AddWithValue("@FatherName", txtFatherName.Text);

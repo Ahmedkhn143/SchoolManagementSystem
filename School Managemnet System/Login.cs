@@ -75,5 +75,10 @@ namespace School_Managemnet_System
         {
 
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

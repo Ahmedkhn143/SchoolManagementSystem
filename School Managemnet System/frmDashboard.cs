@@ -30,7 +30,8 @@ namespace School_Managemnet_System
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-
+            // Show student registration form by default when dashboard opens
+            LoadFormInPanel(new frmStudentRegistration());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -72,6 +73,11 @@ namespace School_Managemnet_System
         private void btnStaff_Click(object sender, EventArgs e)
         {
             LoadFormInPanel(new frmStaffManagement());
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     
